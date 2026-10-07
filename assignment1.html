@@ -1,0 +1,3683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Aishwarya M M | Resume & Bio-data</title>
+
+
+    <!-- =========================================================
+         JQUERY
+         ========================================================= -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <!-- =========================================================
+         CSS
+         ========================================================= -->
+
+    <style>
+
+        /* =========================================================
+           1. COLOR PALETTE
+           ========================================================= */
+
+        :root {
+
+            --brown-dark: #3B2416;
+
+            --brown: #5A3825;
+
+            --brown-light: #8A6246;
+
+            --gold: #B08D57;
+
+            --ivory: #F8F4EC;
+
+            --cream: #FFFDF8;
+
+            --text: #2C211A;
+
+            --muted: #75695E;
+
+            --border: #DED4C7;
+
+            --soft: #F3EDE3;
+
+            --white: #FFFFFF;
+
+        }
+
+
+        /* =========================================================
+           2. BASIC SETTINGS
+           ========================================================= */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--ivory);
+
+            color: var(--text);
+
+            min-height: 100vh;
+
+            line-height: 1.6;
+
+        }
+
+
+        button {
+
+            font-family: inherit;
+
+        }
+
+
+        /* =========================================================
+           3. NAVIGATION
+           ========================================================= */
+
+        .navbar {
+
+            width: 100%;
+
+            height: 72px;
+
+            padding: 0 7%;
+
+            background: var(--brown-dark);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            border-bottom:
+                1px solid #4E3525;
+
+            box-shadow:
+                0 3px 12px
+                rgba(59, 36, 22, 0.12);
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            color: var(--ivory);
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .logo-box {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            background: var(--ivory);
+
+            color: var(--brown-dark);
+
+            border-radius: 5px;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+        }
+
+
+        .nav-button {
+
+            background: transparent;
+
+            border: none;
+
+            color: #D9CEC2;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            padding: 8px 2px;
+
+            position: relative;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .nav-button:hover,
+
+        .nav-button.active {
+
+            color: var(--ivory);
+
+        }
+
+
+        .nav-button.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: -5px;
+
+            height: 2px;
+
+            background: var(--gold);
+
+        }
+
+
+        /* =========================================================
+           4. PAGE SYSTEM
+           ========================================================= */
+
+        .page {
+
+            display: none;
+
+            min-height:
+                calc(100vh - 72px);
+
+        }
+
+
+        .page.active-page {
+
+            display: block;
+
+            animation:
+                pageAppear 0.35s ease;
+
+        }
+
+
+        @keyframes pageAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(8px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           5. HOME PAGE
+           ========================================================= */
+
+        .home-container {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            min-height:
+                calc(100vh - 72px);
+
+            padding: 65px 35px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            gap: 65px;
+
+            align-items: center;
+
+        }
+
+
+        .home-tag {
+
+            color: var(--gold);
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero-name {
+
+            font-size:
+                clamp(48px, 6vw, 76px);
+
+            line-height: 1;
+
+            color: var(--brown-dark);
+
+            letter-spacing: -3px;
+
+            margin-bottom: 24px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .hero-name span {
+
+            color: var(--brown-light);
+
+        }
+
+
+        .hero-role {
+
+            font-size: 21px;
+
+            color: var(--brown);
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================================
+           HOME BUTTONS
+           ========================================================= */
+
+        .home-buttons {
+
+            display: flex;
+
+            gap: 13px;
+
+            margin-top: 30px;
+
+        }
+
+
+        .primary-button,
+
+        .secondary-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 13px 22px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                all 0.25s ease;
+
+        }
+
+
+        .primary-button {
+
+            background: var(--brown-dark);
+
+            color: var(--ivory);
+
+            border:
+                1px solid var(--brown-dark);
+
+        }
+
+
+        .primary-button:hover {
+
+            background: var(--brown);
+
+            border-color: var(--brown);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .secondary-button {
+
+            background: var(--cream);
+
+            color: var(--brown-dark);
+
+            border:
+                1px solid var(--border);
+
+        }
+
+
+        .secondary-button:hover {
+
+            background: var(--soft);
+
+            color: var(--brown);
+
+            border-color:
+                var(--brown-light);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =========================================================
+           HOME PROFILE CARD
+           ========================================================= */
+
+        .profile-card {
+
+            background: var(--cream);
+
+            border:
+                1px solid var(--border);
+
+            border-top:
+                4px solid var(--brown-light);
+
+            border-radius: 10px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(59, 36, 22, 0.10);
+
+        }
+
+
+        .profile-circle {
+
+            width: 105px;
+
+            height: 105px;
+
+            border-radius: 50%;
+
+            background: var(--brown-dark);
+
+            color: var(--ivory);
+
+            display: grid;
+
+            place-items: center;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .profile-card .small-title {
+
+            color: var(--gold);
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .profile-card h2 {
+
+            color: var(--brown-dark);
+
+            font-size: 25px;
+
+            line-height: 1.3;
+
+            margin: 10px 0 20px;
+
+        }
+
+
+        .profile-divider {
+
+            width: 100%;
+
+            height: 1px;
+
+            background: var(--border);
+
+            margin: 20px 0;
+
+        }
+
+
+        .profile-details {
+
+            display: grid;
+
+            gap: 12px;
+
+        }
+
+
+        .profile-detail {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            font-size: 13px;
+
+        }
+
+
+        .profile-detail span {
+
+            color: var(--muted);
+
+        }
+
+
+        .profile-detail strong {
+
+            color: var(--brown-dark);
+
+        }
+
+
+        /* =========================================================
+           HOME QUICK CARDS
+           ========================================================= */
+
+        .home-bottom {
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            padding:
+                0 35px 60px;
+
+        }
+
+
+        .section-heading {
+
+            color: var(--brown-dark);
+
+            font-size: 25px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .quick-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+
+        }
+
+
+        .quick-card {
+
+            background: var(--cream);
+
+            border:
+                1px solid var(--border);
+
+            padding: 25px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .quick-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                var(--brown-light);
+
+            box-shadow:
+                0 8px 25px
+                rgba(59, 36, 22, 0.07);
+
+        }
+
+
+        .quick-card span {
+
+            color: var(--gold);
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .quick-card h3 {
+
+            color: var(--brown-dark);
+
+            margin: 8px 0;
+
+            font-size: 20px;
+
+        }
+
+
+        .quick-card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================================
+           6. COMMON INNER PAGE
+           ========================================================= */
+
+        .inner-container {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding: 55px 30px;
+
+        }
+
+
+        .page-heading {
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .page-heading-label {
+
+            color: var(--gold);
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .page-heading h1 {
+
+            color: var(--brown-dark);
+
+            font-size: 43px;
+
+            margin: 5px 0;
+
+        }
+
+
+        .page-heading p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================================
+           7. RESUME
+           ========================================================= */
+
+        .resume-section {
+
+            display: grid;
+
+            grid-template-columns:
+                145px 1fr;
+
+            gap: 30px;
+
+            padding: 25px 0;
+
+            border-top:
+                1px solid var(--border);
+
+        }
+
+
+        .resume-label {
+
+            color: var(--gold);
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            padding-top: 4px;
+
+        }
+
+
+        .resume-content h2 {
+
+            color: var(--brown-dark);
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .resume-content p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        /* =========================================================
+           PROFESSIONAL SUMMARY
+           ========================================================= */
+
+        .summary-box {
+
+            background: var(--soft);
+
+            border-left:
+                4px solid var(--gold);
+
+            padding: 18px;
+
+            border-radius: 4px;
+
+        }
+
+
+        .summary-box p {
+
+            margin: 0;
+
+            color: var(--text);
+
+        }
+
+
+        /* =========================================================
+           EDUCATION
+           ========================================================= */
+
+        .education-item {
+
+            border-left:
+                2px solid var(--border);
+
+            padding:
+                0 0 18px 20px;
+
+            position: relative;
+
+        }
+
+
+        .education-item:last-child {
+
+            padding-bottom: 0;
+
+        }
+
+
+        .education-item::before {
+
+            content: "";
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+
+            position: absolute;
+
+            left: -5px;
+
+            top: 5px;
+
+        }
+
+
+        .education-year {
+
+            color: var(--brown-light);
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .education-item h3 {
+
+            color: var(--brown-dark);
+
+            font-size: 16px;
+
+            margin: 4px 0;
+
+        }
+
+
+        .education-item p {
+
+            margin: 0;
+
+        }
+
+
+        /* =========================================================
+           SKILLS
+           ========================================================= */
+
+        .skill-category {
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .skill-category:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        .skill-category-title {
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            color: var(--brown-dark);
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .skill-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+        }
+
+
+        .skill {
+
+            background: var(--cream);
+
+            border:
+                1px solid var(--border);
+
+            color: var(--brown) !important;
+
+            padding: 6px 11px;
+
+            border-radius: 4px;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================================
+           PROJECTS
+           ========================================================= */
+
+        .project-grid {
+
+            display: grid;
+
+            gap: 12px;
+
+        }
+
+
+        .project-box {
+
+            background: var(--cream);
+
+            border:
+                1px solid var(--border);
+
+            border-left:
+                3px solid var(--brown-light);
+
+            border-radius: 6px;
+
+            padding: 17px;
+
+        }
+
+
+        .project-number {
+
+            color: var(--gold);
+
+            font-size: 9px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .project-box h3 {
+
+            color: var(--brown-dark);
+
+            font-size: 16px;
+
+            margin: 4px 0;
+
+        }
+
+
+        .project-box p {
+
+            margin: 0 0 7px;
+
+        }
+
+
+        .project-tech {
+
+            color: var(--brown-light);
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================================================
+           TWO COLUMN LIST
+           ========================================================= */
+
+        .two-column-list {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 9px;
+
+        }
+
+
+        .list-box {
+
+            background: var(--cream);
+
+            border:
+                1px solid var(--border);
+
+            padding: 12px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+
+            color: var(--brown);
+
+        }
+
+
+        /* =========================================================
+           CERTIFICATIONS
+           ========================================================= */
+
+        .certification-item {
+
+            display: flex;
+
+            gap: 12px;
+
+            padding: 10px 0;
+
+            border-bottom:
+                1px solid var(--border);
+
+        }
+
+
+        .certification-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .cert-icon {
+
+            width: 30px;
+
+            height: 30px;
+
+            background: var(--soft);
+
+            color: var(--brown-dark);
+
+            border:
+                1px solid var(--border);
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 4px;
+
+            font-size: 8px;
+
+            font-weight: bold;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .certification-item strong {
+
+            display: block;
+
+            color: var(--brown-dark);
+
+            font-size: 12px;
+
+        }
+
+
+        .certification-item span {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================================
+           8. BIO-DATA
+           ========================================================= */
+
+        .biodata-card {
+
+            background: var(--cream);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 12px 30px
+                rgba(59, 36, 22, 0.06);
+
+        }
+
+
+        /* BIO HEADER */
+
+        .bio-header {
+
+            background: var(--brown-dark);
+
+            color: var(--ivory);
+
+            padding: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+            border-bottom:
+                4px solid var(--gold);
+
+        }
+
+
+        .bio-header .profile-circle {
+
+            width: 82px;
+
+            height: 82px;
+
+            margin: 0;
+
+            border-radius: 50%;
+
+            background: var(--ivory);
+
+            color: var(--brown-dark);
+
+            display: grid;
+
+            place-items: center;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .bio-label {
+
+            color: #D6B878 !important;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+
+            display: block;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .bio-header h2 {
+
+            color: var(--ivory) !important;
+
+            font-size: 26px;
+
+            margin: 4px 0 3px;
+
+        }
+
+
+        .bio-header p {
+
+            color: #E7DDD1 !important;
+
+            font-size: 13px;
+
+            margin: 0;
+
+        }
+
+
+        /* BIO GRID */
+
+        .bio-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            background: var(--cream);
+
+        }
+
+
+        .bio-item {
+
+            padding: 18px 22px;
+
+            background: var(--cream);
+
+            border-bottom:
+                1px solid var(--border);
+
+        }
+
+
+        .bio-item:nth-child(odd) {
+
+            border-right:
+                1px solid var(--border);
+
+        }
+
+
+        .bio-item span {
+
+            display: block;
+
+            color: var(--brown-light) !important;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .bio-item strong {
+
+            color: var(--text) !important;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* BIO SECTIONS */
+
+        .bio-section {
+
+            padding: 22px;
+
+            background: var(--cream);
+
+            border-top:
+                1px solid var(--border);
+
+        }
+
+
+        .bio-section h3 {
+
+            color: var(--brown-dark) !important;
+
+            font-size: 16px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .bio-section p {
+
+            color: var(--muted) !important;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin: 0;
+
+        }
+
+
+        /* STRENGTHS */
+
+        .strengths {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+        }
+
+
+        .strength {
+
+            background: var(--soft);
+
+            color: var(--brown) !important;
+
+            border:
+                1px solid var(--border);
+
+            padding: 7px 12px;
+
+            border-radius: 4px;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================================
+           9. FOOTER
+           ========================================================= */
+
+        .footer {
+
+            background: var(--brown-dark);
+
+            color: #D9CEC2;
+
+            padding: 18px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================================
+           10. RESPONSIVE DESIGN
+           ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .home-container {
+
+                grid-template-columns: 1fr;
+
+                padding-top: 50px;
+
+            }
+
+
+            .hero-name {
+
+                font-size: 56px;
+
+            }
+
+
+            .resume-section {
+
+                grid-template-columns: 1fr;
+
+                gap: 10px;
+
+            }
+
+
+            .resume-label {
+
+                padding-top: 0;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .navbar {
+
+                padding: 0 20px;
+
+            }
+
+
+            .logo {
+
+                font-size: 11px;
+
+            }
+
+
+            .nav-links {
+
+                gap: 14px;
+
+            }
+
+
+            .nav-button {
+
+                font-size: 11px;
+
+            }
+
+
+            .hero-name {
+
+                font-size: 43px;
+
+                letter-spacing: -2px;
+
+                white-space: normal;
+
+            }
+
+
+            .quick-grid,
+
+            .two-column-list,
+
+            .bio-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .bio-item:nth-child(odd) {
+
+                border-right: none;
+
+            }
+
+
+            .bio-header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+
+            .footer {
+
+                flex-direction: column;
+
+                gap: 5px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           11. A4 PRINT SETTINGS
+           ========================================================= */
+
+        @page {
+
+            size: A4 portrait;
+
+            margin: 9mm;
+
+        }
+
+
+        @media print {
+
+            * {
+
+                -webkit-print-color-adjust:
+                    exact !important;
+
+                print-color-adjust:
+                    exact !important;
+
+            }
+
+
+            html,
+
+            body {
+
+                width: 210mm;
+
+                margin: 0;
+
+                padding: 0;
+
+                background: white !important;
+
+            }
+
+
+            .navbar,
+
+            .footer,
+
+            .home-buttons {
+
+                display: none !important;
+
+            }
+
+
+            .page {
+
+                display: block !important;
+
+                width: 100%;
+
+                height: 279mm;
+
+                min-height: 279mm;
+
+                overflow: hidden;
+
+                page-break-after: always;
+
+                break-after: page;
+
+            }
+
+
+            .page:last-of-type {
+
+                page-break-after: auto;
+
+                break-after: auto;
+
+            }
+
+
+            /* HOME PRINT */
+
+            .home-container {
+
+                width: 100%;
+
+                min-height: 0;
+
+                height: 155mm;
+
+                padding: 12mm 7mm;
+
+                grid-template-columns:
+                    1.15fr 0.85fr;
+
+                gap: 8mm;
+
+            }
+
+
+            .home-tag {
+
+                color: #8A6246 !important;
+
+                font-size: 7pt;
+
+                margin-bottom: 3mm;
+
+            }
+
+
+            .hero-name {
+
+                color: #3B2416 !important;
+
+                font-size: 38pt;
+
+                letter-spacing: -1.5px;
+
+                white-space: nowrap;
+
+                margin-bottom: 4mm;
+
+            }
+
+
+            .hero-name span {
+
+                color: #8A6246 !important;
+
+            }
+
+
+            .hero-role {
+
+                color: #5A3825 !important;
+
+                font-size: 11pt;
+
+                margin-bottom: 3mm;
+
+            }
+
+
+            .hero-description {
+
+                color: #5F554C !important;
+
+                font-size: 8pt;
+
+                line-height: 1.5;
+
+            }
+
+
+            .profile-card {
+
+                padding: 7mm;
+
+                box-shadow: none;
+
+                border-radius: 4mm;
+
+            }
+
+
+            .profile-circle {
+
+                width: 25mm;
+
+                height: 25mm;
+
+                font-size: 14pt;
+
+                margin-bottom: 5mm;
+
+            }
+
+
+            .profile-card h2 {
+
+                font-size: 14pt;
+
+                margin: 2mm 0 4mm;
+
+            }
+
+
+            .profile-detail {
+
+                font-size: 7pt;
+
+            }
+
+
+            .home-bottom {
+
+                padding:
+                    0 7mm;
+
+            }
+
+
+            .section-heading {
+
+                font-size: 15pt;
+
+                margin-bottom: 3mm;
+
+            }
+
+
+            .quick-grid {
+
+                gap: 3mm;
+
+            }
+
+
+            .quick-card {
+
+                padding: 4mm;
+
+                min-height: 27mm;
+
+            }
+
+
+            .quick-card h3 {
+
+                font-size: 11pt;
+
+            }
+
+
+            .quick-card p {
+
+                font-size: 7pt;
+
+            }
+
+
+            /* INNER PAGES */
+
+            .inner-container {
+
+                width: 100%;
+
+                max-width: none;
+
+                padding: 0;
+
+            }
+
+
+            .page-heading {
+
+                margin-bottom: 3mm;
+
+            }
+
+
+            .page-heading-label {
+
+                color: #8A6246 !important;
+
+                font-size: 6.5pt;
+
+            }
+
+
+            .page-heading h1 {
+
+                color: #3B2416 !important;
+
+                font-size: 25pt;
+
+                margin: 1mm 0;
+
+            }
+
+
+            .page-heading p {
+
+                color: #5F554C !important;
+
+                font-size: 7pt;
+
+            }
+
+
+            /* RESUME PRINT */
+
+            .resume-section {
+
+                grid-template-columns:
+                    25mm 1fr;
+
+                gap: 4mm;
+
+                padding: 2.7mm 0;
+
+                page-break-inside: avoid;
+
+                break-inside: avoid;
+
+            }
+
+
+            .resume-label {
+
+                color: #8A6246 !important;
+
+                font-size: 6.2pt;
+
+            }
+
+
+            .resume-content h2 {
+
+                color: #3B2416 !important;
+
+                font-size: 10.5pt;
+
+                margin-bottom: 1mm;
+
+            }
+
+
+            .resume-content p {
+
+                color: #5F554C !important;
+
+                font-size: 6.7pt;
+
+                line-height: 1.32;
+
+                margin-bottom: 1mm;
+
+            }
+
+
+            .summary-box {
+
+                padding: 2.5mm;
+
+            }
+
+
+            .education-item {
+
+                padding-bottom: 2mm;
+
+                padding-left: 4mm;
+
+            }
+
+
+            .education-item h3 {
+
+                font-size: 8pt;
+
+            }
+
+
+            .education-year {
+
+                color: #8A6246 !important;
+
+                font-size: 6pt;
+
+            }
+
+
+            .education-item p {
+
+                font-size: 6.5pt;
+
+            }
+
+
+            .skill-category {
+
+                margin-bottom: 2mm;
+
+            }
+
+
+            .skill-category-title {
+
+                font-size: 6.5pt;
+
+            }
+
+
+            .skill-list {
+
+                gap: 1mm;
+
+            }
+
+
+            .skill {
+
+                padding:
+                    0.8mm 1.8mm;
+
+                font-size: 6pt;
+
+            }
+
+
+            .project-grid {
+
+                gap: 1.5mm;
+
+            }
+
+
+            .project-box {
+
+                padding: 2mm;
+
+            }
+
+
+            .project-box h3 {
+
+                font-size: 8pt;
+
+            }
+
+
+            .project-box p {
+
+                font-size: 6.2pt;
+
+                line-height: 1.25;
+
+            }
+
+
+            .project-number,
+
+            .project-tech {
+
+                font-size: 5.8pt;
+
+            }
+
+
+            .two-column-list {
+
+                gap: 1.5mm;
+
+            }
+
+
+            .list-box {
+
+                padding: 2mm;
+
+                font-size: 6.5pt;
+
+            }
+
+
+            .certification-item {
+
+                padding: 1.5mm 0;
+
+                gap: 2mm;
+
+            }
+
+
+            .cert-icon {
+
+                width: 5mm;
+
+                height: 5mm;
+
+                font-size: 5.5pt;
+
+            }
+
+
+            .certification-item strong {
+
+                font-size: 6.5pt;
+
+            }
+
+
+            .certification-item span {
+
+                font-size: 5.8pt;
+
+            }
+
+
+            /* BIO-DATA PRINT */
+
+            .biodata-card {
+
+                border-radius: 3mm;
+
+            }
+
+
+            .bio-header {
+
+                padding: 4mm;
+
+            }
+
+
+            .bio-header .profile-circle {
+
+                width: 18mm;
+
+                height: 18mm;
+
+                font-size: 10pt;
+
+            }
+
+
+            .bio-label {
+
+                color: #D6B878 !important;
+
+                font-size: 6pt;
+
+            }
+
+
+            .bio-header h2 {
+
+                color: #FFFDF8 !important;
+
+                font-size: 12pt;
+
+            }
+
+
+            .bio-header p {
+
+                color: #E7DDD1 !important;
+
+                font-size: 6.5pt;
+
+            }
+
+
+            .bio-item {
+
+                padding:
+                    2.5mm 4mm;
+
+            }
+
+
+            .bio-item span {
+
+                color: #8A6246 !important;
+
+                font-size: 5.8pt;
+
+            }
+
+
+            .bio-item strong {
+
+                color: #2C211A !important;
+
+                font-size: 6.8pt;
+
+            }
+
+
+            .bio-section {
+
+                padding:
+                    3mm 4mm;
+
+            }
+
+
+            .bio-section h3 {
+
+                color: #3B2416 !important;
+
+                font-size: 8pt;
+
+            }
+
+
+            .bio-section p {
+
+                color: #5F554C !important;
+
+                font-size: 6.5pt;
+
+            }
+
+
+            .strength {
+
+                color: #5A3825 !important;
+
+                padding:
+                    0.8mm 1.8mm;
+
+                font-size: 6pt;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         HTML
+         NAVIGATION
+         ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-box">
+                AM
+            </div>
+
+            AISHWARYA M M
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <button
+                class="nav-button active"
+                data-page="home">
+
+                Home
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="resume">
+
+                Resume
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="biodata">
+
+                Bio-data
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================================
+         HOME PAGE
+         ========================================================= -->
+
+    <section
+        id="home"
+        class="page active-page">
+
+
+        <div class="home-container">
+
+
+            <div>
+
+                <div class="home-tag">
+
+                    COMPUTER SCIENCE ENGINEERING
+
+                </div>
+
+
+                <h1 class="hero-name">
+
+                    Aishwarya <span>M M</span>
+
+                </h1>
+
+
+                <div class="hero-role">
+
+                    Computer Science Engineering Student
+
+                </div>
+
+
+                <p class="hero-description">
+
+                    Motivated Computer Science Engineering student
+                    interested in software development, artificial
+                    intelligence, web technologies and problem solving.
+                    Passionate about learning new technologies and
+                    transforming ideas into practical applications.
+
+                </p>
+
+
+                <div class="home-buttons">
+
+                    <button
+                        class="primary-button"
+                        data-go="resume">
+
+                        View Resume
+
+                    </button>
+
+
+                    <button
+                        class="secondary-button"
+                        data-go="biodata">
+
+                        View Bio-data
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE CARD -->
+
+            <div class="profile-card">
+
+
+                <div class="profile-circle">
+
+                    AM
+
+                </div>
+
+
+                <div class="small-title">
+
+                    PROFESSIONAL PROFILE
+
+                </div>
+
+
+                <h2>
+
+                    Creative.<br>
+
+                    Curious.<br>
+
+                    Consistent.
+
+                </h2>
+
+
+                <div class="profile-divider"></div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="profile-detail">
+
+                        <span>
+                            Branch
+                        </span>
+
+                        <strong>
+                            CSE
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+                            Semester
+                        </span>
+
+                        <strong>
+                            5th Semester
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+                            University
+                        </span>
+
+                        <strong>
+                            VTU
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-detail">
+
+                        <span>
+                            Career Interest
+                        </span>
+
+                        <strong>
+                            Software & AI
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACCESS -->
+
+        <div class="home-bottom">
+
+
+            <h2 class="section-heading">
+
+                Explore My Profile
+
+            </h2>
+
+
+            <div class="quick-grid">
+
+
+                <div
+                    class="quick-card"
+                    data-go="resume">
+
+
+                    <span>
+                        01 / PROFESSIONAL
+                    </span>
+
+
+                    <h3>
+                        Resume
+                    </h3>
+
+
+                    <p>
+
+                        Education, technical skills,
+                        projects, certifications and
+                        professional interests.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="quick-card"
+                    data-go="biodata">
+
+
+                    <span>
+                        02 / PERSONAL
+                    </span>
+
+
+                    <h3>
+                        Bio-data
+                    </h3>
+
+
+                    <p>
+
+                        Personal information, academic
+                        details, known languages,
+                        strengths and career objective.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         RESUME PAGE
+         ========================================================= -->
+
+    <section
+        id="resume"
+        class="page">
+
+
+        <div class="inner-container">
+
+
+            <div class="page-heading">
+
+                <div class="page-heading-label">
+
+                    02 / PROFESSIONAL PROFILE
+
+                </div>
+
+
+                <h1>
+                    My Resume
+                </h1>
+
+
+                <p>
+
+                    Academic background, technical abilities,
+                    projects and professional interests.
+
+                </p>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    SUMMARY
+
+                </div>
+
+
+                <div class="resume-content">
+
+                    <div class="summary-box">
+
+                        <p>
+
+                            Motivated Computer Science Engineering
+                            student with an interest in software
+                            development, Artificial Intelligence,
+                            web technologies and problem solving.
+                            Interested in building practical
+                            applications and continuously improving
+                            programming and development skills.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDUCATION -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    EDUCATION
+
+                </div>
+
+
+                <div class="resume-content">
+
+
+                    <div class="education-item">
+
+                        <div class="education-year">
+
+                            CURRENT
+
+                        </div>
+
+
+                        <h3>
+
+                            B.E. Computer Science & Engineering
+
+                        </h3>
+
+
+                        <p>
+
+                            Visvesvaraya Technological University
+
+                        </p>
+
+
+                        <p>
+
+                            Currently pursuing 5th Semester
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <div class="education-year">
+
+                            PREVIOUS
+
+                        </div>
+
+
+                        <h3>
+
+                            Pre-University Education
+
+                        </h3>
+
+
+                        <p>
+
+                            Science Stream
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- TECHNICAL SKILLS -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    SKILLS
+
+                </div>
+
+
+                <div class="resume-content">
+
+
+                    <div class="skill-category">
+
+                        <div class="skill-category-title">
+
+                            PROGRAMMING
+
+                        </div>
+
+
+                        <div class="skill-list">
+
+                            <span class="skill">
+                                C
+                            </span>
+
+                            <span class="skill">
+                                Java
+                            </span>
+
+                            <span class="skill">
+                                Python
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-category">
+
+                        <div class="skill-category-title">
+
+                            WEB TECHNOLOGIES
+
+                        </div>
+
+
+                        <div class="skill-list">
+
+                            <span class="skill">
+                                HTML
+                            </span>
+
+                            <span class="skill">
+                                CSS
+                            </span>
+
+                            <span class="skill">
+                                JavaScript
+                            </span>
+
+                            <span class="skill">
+                                jQuery
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-category">
+
+                        <div class="skill-category-title">
+
+                            DATABASE & TOOLS
+
+                        </div>
+
+
+                        <div class="skill-list">
+
+                            <span class="skill">
+                                SQL
+                            </span>
+
+                            <span class="skill">
+                                DBMS
+                            </span>
+
+                            <span class="skill">
+                                Git
+                            </span>
+
+                            <span class="skill">
+                                GitHub
+                            </span>
+
+                            <span class="skill">
+                                VS Code
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-category">
+
+                        <div class="skill-category-title">
+
+                            DEVELOPMENT & AI
+
+                        </div>
+
+
+                        <div class="skill-list">
+
+                            <span class="skill">
+                                Streamlit
+                            </span>
+
+                            <span class="skill">
+                                AI / ML
+                            </span>
+
+                            <span class="skill">
+                                NLP
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECTS -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    PROJECTS
+
+                </div>
+
+
+                <div class="resume-content">
+
+
+                    <div class="project-grid">
+
+
+                        <div class="project-box">
+
+                            <div class="project-number">
+
+                                PROJECT 01
+
+                            </div>
+
+
+                            <h3>
+
+                                Career Compass
+
+                            </h3>
+
+
+                            <p>
+
+                                AI-powered career analysis application
+                                designed to analyze profiles, match
+                                jobs, identify skill gaps and recommend
+                                learning paths.
+
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                Python • LangGraph • Streamlit • NLP
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-box">
+
+                            <div class="project-number">
+
+                                PROJECT 02
+
+                            </div>
+
+
+                            <h3>
+
+                                Plant Disease Detection
+
+                            </h3>
+
+
+                            <p>
+
+                                Machine learning project for identifying
+                                and classifying plant diseases from
+                                leaf images.
+
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                Python • Machine Learning •
+                                Image Processing
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-box">
+
+                            <div class="project-number">
+
+                                PROJECT 03
+
+                            </div>
+
+
+                            <h3>
+
+                                Placement Tracker System
+
+                            </h3>
+
+
+                            <p>
+
+                                Database-oriented application for
+                                managing student placement records,
+                                companies and application information.
+
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                HTML • CSS • JavaScript • DBMS
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-box">
+
+                            <div class="project-number">
+
+                                PROJECT 04
+
+                            </div>
+
+
+                            <h3>
+
+                                Healthcare Monitoring AI Agent
+
+                            </h3>
+
+
+                            <p>
+
+                                AI-based application concept for
+                                monitoring health-related information
+                                and providing useful insights through
+                                an interactive interface.
+
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                Python • AI • Streamlit
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIFICATIONS -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    CERTIFICATIONS
+
+                </div>
+
+
+                <div class="resume-content">
+
+
+                    <div class="certification-item">
+
+
+                        <div class="cert-icon">
+
+                            IBM
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+
+                                Getting Started with Generative AI
+
+                            </strong>
+
+
+                            <span>
+
+                                IBM SkillsBuild • Certificate / Badge
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="certification-item">
+
+
+                        <div class="cert-icon">
+
+                            AI
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+
+                                Introduction to Intelligent
+                                Virtual Agents with IBM watsonx
+                                Assistant – Final Quiz
+
+                            </strong>
+
+
+                            <span>
+
+                                IBM Training • Certificate of Completion
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="certification-item">
+
+
+                        <div class="cert-icon">
+
+                            HR
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+
+                                Java Badge
+
+                            </strong>
+
+
+                            <span>
+
+                                HackerRank • Skill Badge
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="certification-item">
+
+
+                        <div class="cert-icon">
+
+                            PS
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+
+                                Problem Solving Badge
+
+                            </strong>
+
+
+                            <span>
+
+                                HackerRank • Skill Badge
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- INTERESTS -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    INTERESTS
+
+                </div>
+
+
+                <div class="resume-content">
+
+
+                    <div class="two-column-list">
+
+
+                        <div class="list-box">
+
+                            Artificial Intelligence &
+                            Machine Learning
+
+                        </div>
+
+
+                        <div class="list-box">
+
+                            Software Development
+
+                        </div>
+
+
+                        <div class="list-box">
+
+                            Web Development
+
+                        </div>
+
+
+                        <div class="list-box">
+
+                            Generative AI
+
+                        </div>
+
+
+                        <div class="list-box">
+
+                            Problem Solving
+
+                        </div>
+
+
+                        <div class="list-box">
+
+                            UI / UX & Digital Experiences
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOFT SKILLS -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    SOFT SKILLS
+
+                </div>
+
+
+                <div class="resume-content">
+
+
+                    <div class="skill-list">
+
+
+                        <span class="skill">
+                            Problem Solving
+                        </span>
+
+
+                        <span class="skill">
+                            Teamwork
+                        </span>
+
+
+                        <span class="skill">
+                            Communication
+                        </span>
+
+
+                        <span class="skill">
+                            Adaptability
+                        </span>
+
+
+                        <span class="skill">
+                            Quick Learning
+                        </span>
+
+
+                        <span class="skill">
+                            Creativity
+                        </span>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LANGUAGES -->
+
+            <div class="resume-section">
+
+
+                <div class="resume-label">
+
+                    LANGUAGES
+
+                </div>
+
+
+                <div class="resume-content">
+
+
+                    <div class="skill-list">
+
+
+                        <span class="skill">
+                            English
+                        </span>
+
+
+                        <span class="skill">
+                            Kannada
+                        </span>
+
+
+                        <span class="skill">
+                            Hindi
+                        </span>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         BIO-DATA PAGE
+         ========================================================= -->
+
+    <section
+        id="biodata"
+        class="page">
+
+
+        <div class="inner-container">
+
+
+            <div class="page-heading">
+
+
+                <div class="page-heading-label">
+
+                    03 / PERSONAL DETAILS
+
+                </div>
+
+
+                <h1>
+
+                    Bio-data
+
+                </h1>
+
+
+                <p>
+
+                    Personal, academic and professional information.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="biodata-card">
+
+
+                <!-- BIO HEADER -->
+
+                <div class="bio-header">
+
+
+                    <div class="profile-circle">
+
+                        AM
+
+                    </div>
+
+
+                    <div>
+
+
+                        <div class="bio-label">
+
+                            PERSONAL PROFILE
+
+                        </div>
+
+
+                        <h2>
+
+                            Aishwarya M M
+
+                        </h2>
+
+
+                        <p>
+
+                            Computer Science Engineering Student
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- BIO INFORMATION -->
+
+                <div class="bio-grid">
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong>
+                            Aishwarya M M
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Course
+                        </span>
+
+                        <strong>
+                            B.E. Computer Science & Engineering
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            University
+                        </span>
+
+                        <strong>
+                            Visvesvaraya Technological University
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Current Semester
+                        </span>
+
+                        <strong>
+                            5th Semester
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Nationality
+                        </span>
+
+                        <strong>
+                            Indian
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Known Languages
+                        </span>
+
+                        <strong>
+                            English • Kannada • Hindi
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Technical Skills
+                        </span>
+
+                        <strong>
+                            C • Java • Python • Web Technologies
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Career Interest
+                        </span>
+
+                        <strong>
+                            Software Development & AI
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Area of Interest
+                        </span>
+
+                        <strong>
+                            AI/ML • Web Development
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bio-item">
+
+                        <span>
+                            Hobbies
+                        </span>
+
+                        <strong>
+                            Creative Design • Learning Technology
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- CAREER OBJECTIVE -->
+
+                <div class="bio-section">
+
+
+                    <h3>
+
+                        Career Objective
+
+                    </h3>
+
+
+                    <p>
+
+                        To develop a successful career in the field
+                        of Computer Science by applying my technical
+                        knowledge, learning emerging technologies and
+                        contributing to meaningful software projects.
+
+                    </p>
+
+
+                </div>
+
+
+                <!-- STRENGTHS -->
+
+                <div class="bio-section">
+
+
+                    <h3>
+
+                        Strengths
+
+                    </h3>
+
+
+                    <div class="strengths">
+
+
+                        <span class="strength">
+                            Problem Solving
+                        </span>
+
+
+                        <span class="strength">
+                            Teamwork
+                        </span>
+
+
+                        <span class="strength">
+                            Communication
+                        </span>
+
+
+                        <span class="strength">
+                            Quick Learning
+                        </span>
+
+
+                        <span class="strength">
+                            Adaptability
+                        </span>
+
+
+                        <span class="strength">
+                            Creativity
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+
+        <p>
+
+            © 2026 Aishwarya M M
+
+        </p>
+
+
+        <p>
+
+            HTML • CSS • JavaScript • jQuery
+
+        </p>
+
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT + JQUERY
+         ========================================================= -->
+
+    <script>
+
+
+        /* =========================================================
+           PAGE NAVIGATION FUNCTION
+           ========================================================= */
+
+        function showPage(pageName) {
+
+
+            $(".page")
+                .removeClass("active-page");
+
+
+            $("#" + pageName)
+                .addClass("active-page");
+
+
+            $(".nav-button")
+                .removeClass("active");
+
+
+            $('.nav-button[data-page="' +
+                pageName +
+                '"]')
+                .addClass("active");
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+
+            history.replaceState(
+
+                null,
+
+                "",
+
+                "#" + pageName
+
+            );
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION BUTTONS
+           ========================================================= */
+
+        $(".nav-button").click(function () {
+
+
+            let page =
+                $(this).data("page");
+
+
+            showPage(page);
+
+
+        });
+
+
+        /* =========================================================
+           HOME BUTTONS
+           ========================================================= */
+
+        $("[data-go]").click(function () {
+
+
+            let page =
+                $(this).data("go");
+
+
+            showPage(page);
+
+
+        });
+
+
+        /* =========================================================
+           LOAD PAGE FROM URL HASH
+           ========================================================= */
+
+        $(document).ready(function () {
+
+
+            let page =
+                window.location.hash
+                    .replace("#", "");
+
+
+            if (
+
+                page === "resume" ||
+
+                page === "biodata"
+
+            ) {
+
+                showPage(page);
+
+            }
+
+            else {
+
+                showPage("home");
+
+            }
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
